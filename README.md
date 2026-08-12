@@ -125,19 +125,6 @@ Based on our exploratory data analysis and visual dashboard reporting, here are 
 > * **`7.5K` complaints** stem from *Logistics & Packaging* (shipping delays, damaged boxes).
 > * *Action Item:* Operations management should re-evaluate fulfillment partner SLAs to reduce transit damage.
 
----
-
-## 📂 7. Repository File Structure
-
-├── sentiment_analysis_EDA.ipynb        # Jupyter Notebook (Data Cleaning, Text Normalization & EDA)
-├── sentiment_queries.sql              # SQL Queries (Aggregations, Metrics & Category Counts)
-├── Sentiment_Analysis_Dashboard.pbix   # Power BI Source File (Interactive Report)
-├── Sentiment_Analysis_Dashboard.pdf    # PDF Document (For quick offline viewing)
-├── processed_sentiment_data.csv        # Cleaned Dataset Output
-├── dashboard_preview.png              # High-Resolution Dashboard Preview Image
-└── README.md                           # Project Documentation
-
----
 
 ## 🛠️ Tools & Technologies Used
 
@@ -150,5 +137,5 @@ Based on our exploratory data analysis and visual dashboard reporting, here are 
 ---
 
 ### 👤 Author
-* **Role:** Data Analyst
+* **Role:** PAWANI SHARMA Data Analyst
 * **Focus Areas:** End-to-End Data Pipelines, Python EDA, SQL Data Modeling, Power BI UI/UX Architecture
