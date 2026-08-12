@@ -27,48 +27,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 📊 Customer Sentiment & Review Analytics
-### *An End-to-End Analytics Pipeline from Raw Unstructured Data to Executive Business Intelligence*
-
----
-
-<p align="center">
-  <a href="#-1-project-overview--the-big-picture">Overview</a> •
-  <a href="#-2-dataset-source">Data Source</a> •
-  <a href="#-3-phase-1-python--jupyter-notebook-eda">Python EDA</a> •
-  <a href="#-4-phase-2-sql-data-modeling--aggregations">SQL Modeling</a> •
-  <a href="#-5-phase-3-power-bi-dashboard-design">Power BI UI</a> •
-  <a href="#-6-key-business-insights--impact">Insights</a>
-</p>
-
----
-
 ## 📌 1. Project Overview & The Big Picture
 
 In modern digital retail, customer feedback is one of the most critical assets for identifying product quality gaps and operational failure points. However, when dealing with **tens of thousands of customer reviews**, reading feedback manually is impossible.
