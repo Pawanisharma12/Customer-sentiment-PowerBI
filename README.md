@@ -1,154 +1,517 @@
 <div align="center">
 
-<!-- Main Title & Tagline -->
-<h1>📊 Customer Sentiment & Review Analytics</h1>
-<h3>🚀 <i>End-to-End Analytics Pipeline: Raw Unstructured Reviews ➔ Executive Business Intelligence</i></h3>
+# 📊 Customer Sentiment & Review Analytics
 
-<!-- Colorful Badges Row -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Project%20Status-Completed-059669?style=for-the-badge&logo=github" />
-  <img src="https://img.shields.io/badge/Data%20Source-Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pipeline-Python%20%7C%20SQL%20%7C%20Power%20BI-FF6F61?style=for-the-badge" />
+### Turning Customer Reviews into Actionable Business Insights
+
+<p>
+  <img src="https://img.shields.io/badge/Project-Completed-059669?style=for-the-badge&logo=github" />
+  <img src="https://img.shields.io/badge/Python-Pandas-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQL-Analysis-CC2927?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" />
 </p>
 
-<!-- Animated Rainbow Gradient Divider -->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-db03ce00-a425-11eb-83f3-b9fb72d560b4.gif" width="100%">
-
-<!-- Quick Navigation Bar -->
-<p align="center">
-  <a href="#-1-project-overview--the-big-picture"><b>Overview</b></a> •
-  <a href="#-2-dataset-source"><b>Data Source</b></a> •
-  <a href="#-3-phase-1-python--jupyter-notebook-eda"><b>Python EDA</b></a> •
-  <a href="#-4-phase-2-sql-data-modeling--aggregations"><b>SQL Modeling</b></a> •
-  <a href="#-5-phase-3-power-bi-dashboard-design"><b>Power BI UI</b></a> •
-  <a href="#-6-key-business-insights--impact"><b>Insights</b></a>
+<p>
+  <b>Python EDA</b> → <b>Data Cleaning</b> → <b>SQL Analysis</b> → <b>Power BI</b> → <b>Business Insights</b>
 </p>
 
 </div>
 
+---
 
-## 📌 1. Project Overview & The Big Picture
+## 📌 Project Overview
 
-In modern digital retail, customer feedback is one of the most critical assets for identifying product quality gaps and operational failure points. However, when dealing with **tens of thousands of customer reviews**, reading feedback manually is impossible.
+Customer reviews contain valuable information about **product quality, pricing, logistics, packaging, and customer support**. However, analyzing thousands of reviews manually makes it difficult for businesses to identify the most important customer pain points.
 
-### 🚨 The Business Problem
-A growing retail brand received **over 28,000 customer reviews**, but business leaders lacked clear visibility into:
-* **Sentiment Metrics:** What percentage of total feedback is positive, negative, or neutral?
-* **Operational Bottlenecks:** What specific business functions (e.g., product quality, logistics, pricing, customer support) cause the most customer churn?
-* **Strategic Alignment:** How can operational teams prioritize fixes based on quantifiable customer complaints?
+This project analyzes **28,687 customer reviews** and transforms the data into an interactive **Customer Sentiment & Review Analytics Dashboard** using:
 
-### 💡 The Solution
-We engineered an **End-to-End Data Pipeline** that converts unstructured customer feedback into actionable business intelligence using **Python (Pandas/EDA), SQL, and Power BI**.
+* 🐍 **Python & Pandas** for data cleaning and exploratory analysis
+* 🗄️ **SQL** for analytical queries and aggregations
+* 📊 **Power BI** for interactive visualization and dashboarding
+* 💡 **Business analysis** to identify major complaint drivers
 
-Raw Amazon/Retail Reviews -> Python & Jupyter EDA -> SQL Aggregations & Categorization -> Power BI Interactive Dashboard
+The objective was to answer a simple business question:
+
+> **What are customers saying, where are the major pain points, and which areas should the business prioritize?**
 
 ---
 
-## 📂 2. Dataset Source
+## 🎯 Business Questions
 
-> [!NOTE]  
-> **Source:** Kaggle  
-> 🔗 **Dataset Link:** https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products
+The analysis focuses on answering the following questions:
 
----
-
-## 🐍 3. Phase 1: Python & Jupyter Notebook EDA
-
-The first phase took place in a Jupyter Notebook to inspect, clean, and pre-process the raw review dataset.
-
-### Key Technical Steps Executed in Python:
-1. **Data Ingestion & Integrity Checks:**
-   * Loaded the raw review dataset using `pandas`.
-   * Checked for missing values (`df.isnull().sum()`), duplicates (`df.duplicated().sum()`), and verified column data types.
-2. **Text Normalization & Categorization:**
-   * Standardized text inputs, stripped unnecessary whitespace, and converted all text to UTF-8 formatting.
-   * Categorized customer feedback into major business functions: *Product Quality & Taste*, *Logistics & Packaging*, *Pricing & Value*, and *Customer Support*.
-3. **Sentiment Score Calculation:**
-   * Verified normalized sentiment polarity scores ranging from `0.00` (Extremely Negative) to `1.00` (Extremely Positive).
-4. **Data Export:**
-   * Exported the cleaned dataset for SQL querying and Power BI visualization.
+1. What is the overall customer sentiment?
+2. What percentage of reviews are positive, negative, and neutral?
+3. What is the average customer rating?
+4. Which complaint categories receive the highest volume of feedback?
+5. Which operational areas may require the most attention?
+6. How can customer feedback be converted into actionable business insights?
 
 ---
 
-## 🗄️ 4. Phase 2: SQL Data Modeling & Aggregations
+## 🔄 End-to-End Analytics Workflow
 
-Once the dataset was cleaned, structured queries were written in SQL to aggregate metrics, calculate category counts, and prepare structured tables for BI consumption.
+```text
+                    RAW CUSTOMER REVIEWS
+                            │
+                            ▼
+                  ┌───────────────────┐
+                  │ Python / Pandas   │
+                  │ Data Cleaning     │
+                  │ EDA & Processing  │
+                  └─────────┬─────────┘
+                            │
+                            ▼
+                  PROCESSED REVIEW DATA
+                            │
+                            ▼
+                  ┌───────────────────┐
+                  │       SQL         │
+                  │ Aggregations      │
+                  │ Grouping & KPIs   │
+                  └─────────┬─────────┘
+                            │
+                            ▼
+                  ┌───────────────────┐
+                  │     Power BI      │
+                  │ Visualization     │
+                  │ Dashboard         │
+                  └─────────┬─────────┘
+                            │
+                            ▼
+                  BUSINESS INSIGHTS
+```
 
-### Essential SQL Queries Executed:
+---
 
--- 1. Total Reviews and Overall Average Rating
+## 📂 Dataset
+
+**Source:** Kaggle — Datafiniti Consumer Reviews of Amazon Products
+
+The dataset contains customer review information including product, rating, review-related attributes, and sentiment-related information.
+
+### Dataset Scale
+
+| Metric                  |           Value |
+| ----------------------- | --------------: |
+| Total Reviews           |      **28,687** |
+| Average Rating          | **4.16 / 5.00** |
+| Average Sentiment Score |        **0.65** |
+| Positive Reviews        |      **25.08K** |
+| Negative Reviews        |       **3.01K** |
+| Neutral Reviews         |       **0.60K** |
+
+---
+
+# 🐍 Phase 1 — Python Data Cleaning & EDA
+
+The first stage of the project was performed using **Python and Jupyter Notebook**.
+
+### Key Steps
+
+#### 1. Data Loading
+
+The dataset was loaded and inspected using Pandas.
+
+```python
+import pandas as pd
+
+df = pd.read_csv("your_dataset.csv")
+
+df.head()
+df.info()
+df.shape
+```
+
+#### 2. Data Quality Checks
+
+The dataset was checked for:
+
+* Missing values
+* Duplicate records
+* Incorrect data types
+* Inconsistent text values
+* Data quality issues
+
+Example:
+
+```python
+df.isnull().sum()
+df.duplicated().sum()
+df.dtypes
+```
+
+#### 3. Data Cleaning & Preparation
+
+The review data was cleaned and standardized before analysis.
+
+This included:
+
+* Handling missing values
+* Removing unnecessary whitespace
+* Standardizing text values
+* Preparing categorical variables
+* Preparing sentiment-related fields
+* Creating business-oriented complaint categories
+
+### Complaint Categories
+
+Customer feedback was organized into:
+
+* **Product Quality & Taste**
+* **General / Unclassified**
+* **Logistics & Packaging**
+* **Pricing & Value**
+* **Customer Support**
+
+#### 4. Processed Dataset
+
+After preprocessing, the cleaned dataset was exported as:
+
+`processed_sentiment_data.csv`
+
+This processed dataset was then used for SQL analysis and Power BI reporting.
+
+---
+
+# 🗄️ Phase 2 — SQL Analysis
+
+SQL was used to perform analytical queries on the processed review data.
+
+The analysis focused on:
+
+* KPI calculations
+* Review counts
+* Average ratings
+* Sentiment distribution
+* Complaint-category analysis
+* Percentage calculations
+* Sorting and aggregation
+
+### Example 1 — Overall KPIs
+
+```sql
 SELECT 
     COUNT(Id) AS Total_Reviews,
     ROUND(AVG(Score), 2) AS Average_Star_Rating,
     ROUND(AVG(Sentiment_Score), 2) AS Average_Sentiment_Score
 FROM processed_sentiment_data;
+```
 
--- 2. Breakdown of Complaint Categories Sorted by Severity
+### Example 2 — Complaint Category Analysis
+
+```sql
 SELECT 
     Complaint_Category,
     COUNT(Id) AS Total_Complaints
 FROM processed_sentiment_data
 GROUP BY Complaint_Category
 ORDER BY Total_Complaints DESC;
+```
 
--- 3. Sentiment Distribution Percentage
+### Example 3 — Sentiment Distribution
+
+```sql
 SELECT 
     Sentiment_Label,
     COUNT(Id) AS Total_Count,
-    ROUND((COUNT(Id) * 100.0 / (SELECT COUNT(*) FROM processed_sentiment_data)), 2) AS Percentage
+    ROUND(
+        COUNT(Id) * 100.0 /
+        (SELECT COUNT(*) FROM processed_sentiment_data),
+        2
+    ) AS Percentage
 FROM processed_sentiment_data
 GROUP BY Sentiment_Label;
+```
+
+### SQL Skills Demonstrated
+
+* `SELECT`
+* `WHERE`
+* `GROUP BY`
+* `ORDER BY`
+* `COUNT()`
+* `AVG()`
+* `ROUND()`
+* Aggregate functions
+* Subqueries
+* Percentage calculations
+* Business-oriented data aggregation
 
 ---
 
-## 🎨 5. Phase 3: Power BI Dashboard Design & UI Architecture
+# 📊 Phase 3 — Power BI Dashboard
 
-The aggregated data was brought into Power BI Desktop to build a modern, high-contrast, executive-level dashboard.
+The processed data was imported into **Power BI Desktop** to create an interactive business intelligence dashboard.
 
-### 📸 Dashboard Visual Layout
-![Customer Sentiment Dashboard Preview](dashboard_preview.png)
+## Dashboard Preview
 
-### 🎨 Design & UI Architecture Highlights:
-* **Thematic Palette:** Built with an **Emerald Green (`#059669`)** core theme paired with clean white container cards, soft drop shadows, and visual hierarchy.
-* **Header Banner:** Full-width header displaying clear dashboard title and subtext.
-* **Executive KPI Cards:** 
-  * **Average Score:** `4.16` (Star rating indicator)
-  * **Total Reviews:** `28,687` (Volume indicator)
-  * **Average Sentiment Score:** `0.65` (Positivity index)
-* **Interactive Donut Chart:** Visualizes sentiment distribution (**87.42% Positive**, **10.5% Negative**, **2.08% Neutral**).
-* **Horizontal Bar Chart:** Highlights complaint drivers sorted from highest to lowest volume.
+![Customer Sentiment & Review Analytics Dashboard](Dashboard.png)
 
 ---
 
-## 📊 6. Key Business Insights & Strategic Recommendations
+## 📈 Dashboard KPIs
 
-Based on our exploratory data analysis and visual dashboard reporting, here are the core findings:
+The dashboard highlights the following key metrics:
 
-> [!IMPORTANT]
-> ### 1. Overall Brand Health is Strong
-> * Out of **28,687** customer reviews, **87.42%** are positive, yielding a solid average rating of **4.16 / 5.00**.
+### ⭐ Average Rating
 
-> [!WARNING]
-> ### 2. Primary Product Risk: Product Quality & Taste
-> * **`10.4K` complaints** originate from *Product Quality & Taste*, making up over **36% of total feedback**. 
-> * *Action Item:* Supply chain and quality control teams must audit batch production and raw material sourcing immediately.
+**4.16 / 5.00**
 
-> [!CAUTION]
-> ### 3. Secondary Bottleneck: Logistics & Packaging
-> * **`7.5K` complaints** stem from *Logistics & Packaging* (shipping delays, damaged boxes).
-> * *Action Item:* Operations management should re-evaluate fulfillment partner SLAs to reduce transit damage.
+This represents the average customer rating across the analyzed reviews.
 
+### 👥 Total Reviews
 
-## 🛠️ Tools & Technologies Used
+**28,687**
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-CC292B?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+Total number of customer reviews analyzed.
+
+### 😊 Average Sentiment Score
+
+**0.65**
+
+Overall average sentiment score across the dataset.
 
 ---
 
-### 👤 Author
-* **Role:** PAWANI SHARMA Data Analyst
-* **Focus Areas:** End-to-End Data Pipelines, Python EDA, SQL Data Modeling, Power BI UI/UX Architecture
+## 🧠 Sentiment Distribution
+
+The dashboard shows:
+
+| Sentiment   |    Reviews | Percentage |
+| ----------- | ---------: | ---------: |
+| 🟢 Positive | **25.08K** | **87.42%** |
+| 🔴 Negative |  **3.01K** | **10.50%** |
+| ⚪ Neutral   |  **0.60K** |  **2.08%** |
+
+### Key Observation
+
+**87.42% of the analyzed reviews are positive**, indicating an overall favorable customer sentiment.
+
+However, approximately **12.58% of reviews are negative or neutral**, representing an important opportunity for identifying and addressing customer pain points.
+
+---
+
+# 📦 Complaint Category Analysis
+
+The dashboard identifies the following complaint categories:
+
+| Complaint Category          | Review Count |
+| --------------------------- | -----------: |
+| **Product Quality & Taste** |    **10.4K** |
+| **General / Unclassified**  |     **7.6K** |
+| **Logistics & Packaging**   |     **7.5K** |
+| **Pricing & Value**         |     **2.1K** |
+| **Customer Support**        |     **1.0K** |
+
+### 🥇 #1 Product Quality & Taste
+
+**10.4K reviews**
+
+Product Quality & Taste has the highest volume among the categorized feedback.
+
+**Business implication:**
+Product quality should be investigated as a major customer-experience area, with attention to consistency, product expectations, and quality-control processes.
+
+### 🥈 #2 General / Unclassified
+
+**7.6K reviews**
+
+A large amount of feedback falls into the General / Unclassified category.
+
+**Business implication:**
+Improving complaint classification could help convert currently unclassified feedback into more specific operational insights.
+
+### 🥉 #3 Logistics & Packaging
+
+**7.5K reviews**
+
+Logistics & Packaging represents another major source of customer feedback.
+
+**Business implication:**
+The business could investigate delivery performance, packaging quality, product handling, and fulfillment processes.
+
+---
+
+# 💡 Key Business Insights
+
+### 1. Strong Overall Customer Sentiment
+
+**87.42% of reviews are positive**, while the average rating is **4.16 / 5.00**.
+
+This indicates strong overall customer satisfaction in the analyzed dataset.
+
+---
+
+### 2. Product Quality & Taste Is the Largest Complaint Category
+
+With approximately **10.4K reviews**, Product Quality & Taste has the highest complaint volume.
+
+This makes product quality a key area for further investigation.
+
+---
+
+### 3. Logistics & Packaging Is Another Major Pain Point
+
+With approximately **7.5K reviews**, Logistics & Packaging is the third-largest category by volume.
+
+Potential areas for investigation include:
+
+* Delivery experience
+* Packaging quality
+* Product damage during transit
+* Fulfillment processes
+
+---
+
+### 4. Classification Can Improve Future Analysis
+
+The **General / Unclassified** category contains approximately **7.6K reviews**.
+
+Improving categorization could provide more granular insights and help business teams identify additional operational problems.
+
+---
+
+# 🎯 Business Recommendations
+
+Based on the analysis, the following actions could be considered:
+
+| Area                    | Recommendation                                                   |
+| ----------------------- | ---------------------------------------------------------------- |
+| **Product Quality**     | Investigate recurring product-quality and taste-related feedback |
+| **Logistics**           | Review delivery and fulfillment performance                      |
+| **Packaging**           | Analyze packaging-related complaints and transit damage          |
+| **Classification**      | Improve complaint categorization for more precise reporting      |
+| **Customer Experience** | Monitor sentiment trends regularly through BI dashboards         |
+
+---
+
+# 🛠️ Technologies & Tools
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+<img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" />
+<img src="https://img.shields.io/badge/SQL-CC2927?style=for-the-badge&logo=mysql&logoColor=white" />
+<img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" />
+
+</div>
+
+### Technical Skills Demonstrated
+
+**Python**
+
+* Pandas
+* Data Cleaning
+* Exploratory Data Analysis
+* Data Transformation
+
+**SQL**
+
+* Aggregations
+* Grouping
+* Filtering
+* Subqueries
+* KPI calculations
+* Analytical queries
+
+**Power BI**
+
+* Dashboard Development
+* KPI Cards
+* Donut Charts
+* Bar Charts
+* Data Visualization
+* Business Reporting
+
+**Analytics**
+
+* Sentiment Analysis
+* Customer Feedback Analysis
+* Complaint Categorization
+* Business Insight Generation
+
+---
+
+# 📁 Repository Structure
+
+```text
+Customer-sentiment-PowerBI/
+│
+├── 📊 Dashboard.png
+│   └── Final Power BI dashboard preview
+│
+├── 📄 Sentiment_Analysis_Dashboard.pdf
+│   └── Exported dashboard report
+│
+├── 📓 sentiment.ipynb
+│   └── Python data cleaning & EDA
+│
+├── 🗄️ sql_analytics_queries.sql
+│   └── SQL analytical queries
+│
+├── 📊 processed_sentiment_data.csv
+│   └── Processed dataset used for analysis
+│
+└── 📖 README.md
+    └── Project documentation
+```
+
+---
+
+# 🚀 Project Outcome
+
+This project demonstrates an end-to-end **Data Analytics workflow**:
+
+```text
+Data
+ ↓
+Cleaning
+ ↓
+Exploratory Analysis
+ ↓
+SQL Analytics
+ ↓
+Power BI Visualization
+ ↓
+Business Insights
+```
+
+Rather than only presenting charts, the project focuses on converting customer feedback into **measurable business information and actionable recommendations**.
+
+---
+
+# 📌 Future Improvements
+
+Possible future enhancements include:
+
+* Add monthly/quarterly sentiment trends
+* Add product-level sentiment analysis
+* Create drill-through pages in Power BI
+* Add dynamic date and product filters
+* Perform deeper text analysis using NLP
+* Identify recurring keywords in negative reviews
+* Build automated data-refresh workflows
+* Add predictive sentiment or rating analysis
+
+---
+
+# 👩‍💻 Author
+
+### Pawani Sharma
+
+**Computer Engineering Student | Aspiring Data Analyst**
+
+**Interests:**
+Data Analytics • Python • SQL • Power BI • Business Intelligence • Machine Learning
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project useful, consider starring the repository!
+
+**Built with Python • SQL • Power BI**
+
+</div>
