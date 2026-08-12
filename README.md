@@ -1,3 +1,58 @@
+<div align="center">
+
+<!-- Main Title & Tagline -->
+<h1>📊 Customer Sentiment & Review Analytics</h1>
+<h3>🚀 <i>End-to-End Analytics Pipeline: Raw Unstructured Reviews ➔ Executive Business Intelligence</i></h3>
+
+<!-- Colorful Badges Row -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Project%20Status-Completed-059669?style=for-the-badge&logo=github" />
+  <img src="https://img.shields.io/badge/Data%20Source-Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pipeline-Python%20%7C%20SQL%20%7C%20Power%20BI-FF6F61?style=for-the-badge" />
+</p>
+
+<!-- Animated Rainbow Gradient Divider -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-db03ce00-a425-11eb-83f3-b9fb72d560b4.gif" width="100%">
+
+<!-- Quick Navigation Bar -->
+<p align="center">
+  <a href="#-1-project-overview--the-big-picture"><b>Overview</b></a> •
+  <a href="#-2-dataset-source"><b>Data Source</b></a> •
+  <a href="#-3-phase-1-python--jupyter-notebook-eda"><b>Python EDA</b></a> •
+  <a href="#-4-phase-2-sql-data-modeling--aggregations"><b>SQL Modeling</b></a> •
+  <a href="#-5-phase-3-power-bi-dashboard-design"><b>Power BI UI</b></a> •
+  <a href="#-6-key-business-insights--impact"><b>Insights</b></a>
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 📊 Customer Sentiment & Review Analytics
 ### *An End-to-End Analytics Pipeline from Raw Unstructured Data to Executive Business Intelligence*
 
